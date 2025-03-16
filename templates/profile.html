@@ -20,6 +20,14 @@
 
     <p><strong>Логін:</strong> {{ current_user.username }}</p>
 
+    <!-- 🔹 Додаємо відображення фото профілю -->
+    {% if current_user.profile_picture %}
+        <p><strong>Фото профілю:</strong></p>
+        <img src="{{ url_for('profile_photo') }}" alt="Фото профілю" width="150">
+    {% else %}
+        <p>Фото ще не завантажено.</p>
+    {% endif %}
+
     <h3>Змінити пароль</h3>
     <form method="POST">
         <label>Поточний пароль:</label>

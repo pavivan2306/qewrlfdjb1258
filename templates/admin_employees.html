@@ -28,6 +28,7 @@
                 <td>{{ user.id }}</td>
                 <td>{{ user.username }}</td>
                 <td>
+                    <a href="{{ url_for('upload_photo', user_id=user.id) }}">📷 Завантажити фото</a> |
                     <a href="{{ url_for('delete_employee', user_id=user.id) }}">❌ Видалити</a>
                 </td>
             </tr>
