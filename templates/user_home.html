@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Особистий кабінет</title>
+</head>
+<body>
+    <h2>Вітаємо, {{ current_user.username }}!</h2>
+    <p>Ви увійшли як користувач.</p>
+    <ul>
+        <li><a href="{{ url_for('profile') }}">Мій профіль</a></li>
+        <li><a href="{{ url_for('logout') }}">Вийти</a></li>
+    </ul>
+</body>
+</html>

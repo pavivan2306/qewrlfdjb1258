@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заявки на реєстрацію</title>
+</head>
+<body>
+    <h2>Запити на реєстрацію</h2>
+    <ul>
+        {% for req in requests %}
+            <li>
+                <strong>{{ req.full_name }}</strong> ({{ req.username }})
+                <a href="{{ url_for('approve_request', request_id=req.id) }}">✅ Затвердити</a>
+                <a href="{{ url_for('reject_request', request_id=req.id) }}">❌ Відхилити</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
